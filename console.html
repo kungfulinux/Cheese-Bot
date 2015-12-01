@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="src/css/console.css">
+  </head>
+  <body>
+  <img id="overlay" src="src/images/consoleOverlay.png">
+  <div id="container">
+  <input type="text" class="matField" id="command" placeholder="Chat/Command" autocomplete="off">
+  <button class="send" class="buttonMaterial" onclick="sendMessage()">Send</button>
+  <button class="restart" class="buttonMaterial" onclick="restartBot()">Restart</button>
+  <button class="goHome" class="buttonMaterial" onclick="gotoIndex()">Back</button>
+  </div>
+  <div id="Space"></div>
+  <h1 class="spacer">SPACED AREA</h1>
+  </body>
+  
+<script>
+	var mineflayer = require('mineflayer');
+	var requireIndex = require('requireindex');
+	var gui = require('nw.gui');
+	var win = gui.Window.get();
+	
+	//Send Command
+	function sendMessage() {
+		console.log("message sent");
+		var sendString = document.getElementById("command").value
+		document.getElementById('command').value = ""
+		if (sendString != "") {
+			if (sendString.startsWith("^")) {
+				var newSendString = sendString.substring(1);
+				fakeConsole("You sent the C-B command: " + newSendString,"info")
+				bot.whisper(bot.username, newSendString)
+			} else {
+				fakeConsole("You sent: " + sendString,"info")
+				bot.chat(sendString)
+			}
+		}
+	}
+	
+	function restartBot() {
+		bot.quit()
+		console.log("restarted");
+		setTimeout(location.reload(),500)
+		}
+		
+	function gotoIndex() {
+		bot.quit()
+		console.log("went back to index");
+		window.location.replace("index.html");
+		}
+	
+	//Fake Log
+	function fakeConsole(text,type) {
+		var text = arguments[0]
+		var type = arguments[1]
+		var para = document.createElement("P");
+		var t = document.createTextNode(text);
+		para.className = type;
+		para.appendChild(t);
+		document.getElementById('Space').appendChild(para);
+		window.scrollTo(0,document.body.scrollHeight);
+	}
+	win.on('close', function () {
+		//win.hide()
+		if (fs.existsSync("./src/userdata/tempdat.txt")) {fs.unlink("./src/userdata/tempdat.txt")}
+		win.close(true);
+	});
+</script>
+<script src="src/scripts/botcore.js"></script>
+</html>

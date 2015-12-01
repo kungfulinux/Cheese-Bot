@@ -1,0 +1,105 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+body {
+	font-style: normal;
+    color: black;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	background-color: white;
+	background-attachment: fixed;
+	background-image: url("../images/consolebackground.png")
+}
+#container {
+    position: fixed;
+	bottom: 0;
+}
+input  {
+	font-style: normal;
+    color: black;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	width: 565px;
+    margin-left: 50px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	position: absolute;
+	bottom: 0;
+}
+h3 {
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+	font-size: 18px;
+	line-height: 10%;
+}
+h1 {
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+	font-size: 32px;
+	line-height: 100%;
+}
+p {
+	color: black;
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	margin-right: 50px;
+    margin-left: 50px;
+	margin-top: 5px;
+	line-height: 4px;
+	z-index: -3;
+}
+.buttonMaterial {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #2196F3;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	text-indent: 0;
+	z-index: 2;
+	margin-bottom: 7px;
+}
+.buttonMaterial:hover {
+	background: #42A5F5;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+.buttonMaterial:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #1E88E5;
+}
+#bacBu {
+	margin-left: 340px;
+}
+#savBu back {
+	margin-left: 365px;
+}
+#overlay {
+	pointer-events: none;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+}
+#codebox {
+	white-space: pre;
+	word-wrap: normal;
+	overflow: scroll;
+	position: fixed;
+	outline: none;
+	margin-left: 50px;
+	margin-top: 8px;
+	resize: none;
+}

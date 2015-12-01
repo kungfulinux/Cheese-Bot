@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cheese Bot</title>
+	<link rel="stylesheet" type="text/css" href="src/css/index.css">
+	<script src="src/scripts/savedata.js"></script>
+  </head>
+  <body>
+	<center>
+	<img src="src/images/header.png">
+	<form onsubmit="saveToFile()" action="console.html">
+	<h3>Server Address</h3>
+	<input type="text" class="matField" id="ip" placeholder="127.0.0.1" required><br>
+	<small>This may be left blank for local host.</small><br>
+	<h3>Server Port</h3>
+	<input type="text" class="matField" id="port" placeholder="25565"><br>
+	<small>This may be left blank for the default port.</small><br>
+	<h3>Username/Email</h3>
+	<input type="text" class="matField" id="username" placeholder="Notch" required><br>
+	<small>Use an email if the account is migrated.</small><br>
+	<h3>Password</h3>
+	<input type="password" class="matField" id="password" placeholder="abc123"><br>
+	<small>This may be left blanked for cracked/offline servers.</small><br><br>
+	<input type="checkbox" onclick="doSave()" id="save">Remember Me<br><br><br>
+	<input type="submit" class="buttonMaterial" value="Start Bot">
+	<button type="button" class="buttonMaterial" onclick="gotoPlugins()">Plugins</button>
+	<button type="button" class="buttonMaterial" onclick="gotoWebsite()">Website</button>
+	</form>
+	</center>
+	<script src="src/scripts/loaddata.js"></script>
+	<script>
+	var gui = require('nw.gui');
+	var win = gui.Window.get();
+	
+	function gotoWebsite() {
+		gui.Shell.openExternal("http://bot.minecheesecraft.com");
+	}
+	function gotoPlugins() {
+		saveToFile()
+		window.location.replace("plugins.html");
+	}
+	win.on('close', function () {
+		//win.hide()
+		if (fs.existsSync("./src/userdata/tempdat.txt")) {fs.unlink("./src/userdata/tempdat.txt")}
+		win.close(true);
+	});
+	function doSave() {
+	    if (document.getElementById('save').checked) {
+			var ip_element = document.getElementById("ip").value
+			var port_element = document.getElementById("port").value
+			var name_element = document.getElementById("username").value
+			var pass_element = document.getElementById("password").value
+			savestring = name_element + "|" + pass_element + "|" + ip_element + "|" + port_element + "|" + "1"
+			fs.writeFile("./src/userdata/settings.txt", savestring, function(err) {
+				if(err) {
+				return console.log(err);
+				}
+			});
+		} else {
+			savestring = "||||" + "0"
+			fs.writeFile("./src/userdata/settings.txt", savestring, function(err) {
+				if(err) {
+				return console.log(err);
+				}
+			});
+		}
+	}
+</script>
+  </body>
+</html>

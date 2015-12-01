@@ -1,0 +1,73 @@
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="src/css/plugins.css">
+	<script src="src/scripts/listplugins.js"></script>
+  </head>
+  <body>
+  <img id="overlay" src="src/images/consoleOverlay.png">
+  <div id="container">
+  <input class="getFile" accept=".js" onchange="importPluginFinish()" type="file" id="getPlugin">
+  <button class="buttonMaterial" id="bacBu" onclick="gotoIndex()">Back</button>
+  <button class="buttonMaterial" id="impBu" onclick="importPlugin()">Import</button>
+  <button class="buttonMaterial" id="newBu" onclick="createNew()">New</button>
+  </div>
+  <div id="enabledSpace"></div>
+  <div id="disabledSpace"></div>
+  <h1 class="spacer">SPACED AREA</h1>
+  </body>
+  <script>
+	var fs = require("fs");
+	var gui = require('nw.gui');
+	var win = gui.Window.get();
+	
+	function gotoIndex() {
+		window.location.replace("index.html");
+	}
+	function importPlugin() {
+		document.getElementById("getPlugin").click();
+	}
+	function importPluginFinish() {
+		var dir = document.getElementById("getPlugin").value
+		var name = dir.replace(/^.*[\\\/]/, '')
+		copyFile(dir, "./src/scripts/plugins/" + name)
+		location.reload();
+	}
+	function createNew() {
+		var newName = prompt("Please enter your new plugin's name.", "");
+		if (newName !== "" && newName !== null) {
+			if (fs.existsSync("./src/scripts/plugins/" + newName + ".js") || fs.existsSync("./src/scripts/disabledplugins/" + newName + ".js")) {
+				alert("A plugin with that name already exists. Please use a different name.");
+			} else {
+				copyFile("./src/scripts/plugintemplate.js", "./src/scripts/plugins/" + newName + ".js")
+				location.reload();
+			}
+		}
+	}
+	win.on('close', function () {
+		//win.hide()
+		if (fs.existsSync("./src/userdata/tempdat.txt")) {fs.unlink("./src/userdata/tempdat.txt")}
+		win.close(true);
+	});
+	function copyFile(source, target, cb) {
+	var cbCalled = false;
+	var rd = fs.createReadStream(source);
+	rd.on("error", function(err) {
+		done(err);
+	});
+	var wr = fs.createWriteStream(target);
+	wr.on("error", function(err) {
+		done(err);
+	});
+	wr.on("close", function(ex) {
+		done();
+	});
+	rd.pipe(wr);
+	function done(err) {
+	if (!cbCalled) {
+		cb(err);
+		cbCalled = true;
+		}
+	}
+}
+</script>
+</html>

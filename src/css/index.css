@@ -1,0 +1,94 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+.tick {
+    background:url('../images/tick0.png') no-repeat;
+}
+.tick:checked {
+    background:url('../images/tick1.png') no-repeat;
+}
+.matField {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	background: #E1F5FE;
+	outline: 0;
+	font-family: "Roboto";
+	border: 3px;
+	border-radius: 2px;
+	width: 240px;
+	height: 16px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.matField:focus {
+	background: #81D4FA;
+	width: 260px;
+	height: 14px;
+	border-radius: 6px;
+	box-shadow: 0px 0px 5px #4FC3F7;
+}
+body {
+	font-style: normal;
+    color: black;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	background-color: white;
+	background-image: url("../images/background.png")
+}
+h3 {
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+	font-size: 18px;
+	line-height: 10%;
+}
+h1 {
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+	font-size: 32px;
+	line-height: 100%;
+}
+p {
+	font-style: normal;
+    color: gray;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	background-color: white
+}
+.buttonMaterial {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #2196F3;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	text-indent: 0;
+}
+.buttonMaterial:hover {
+	background: #42A5F5;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+.buttonMaterial:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #1E88E5;
+}

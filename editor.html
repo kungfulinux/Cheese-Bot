@@ -1,0 +1,53 @@
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="src/css/editor.css">
+  </head>
+  <body>
+  <img id="overlay" src="src/images/consoleOverlay.png">
+  <div id="container">
+  <button class="buttonMaterial" tabindex="-1" id="bacBu" onclick="gotoPlugins()">Back</button>
+  <button class="buttonMaterial" tabindex="-1" id="savBu" onclick="pluSave()">Save</button>
+  </div>
+  <textarea id="codebox" onchange="setEdit()" tabindex="-1" rows="28" cols="83"></textarea>
+  </body>
+  <script>
+	var fs  = require("fs");
+	var codetext = fs.readFileSync("./src/scripts/" + window.location.hash.substr(1));
+	document.getElementById("codebox").value = codetext.toString();
+	var didSave = true
+	
+	function pluSave() {
+		didSave = true
+		var savestring = document.getElementById("codebox").value
+		fs.writeFile("./src/scripts/" + window.location.hash.substr(1), savestring, function(err) {if(err) {return console.log(err);}});
+		location.reload();
+	}
+	function setEdit() {
+		didSave = false
+	}
+	function gotoPlugins() {
+		if (didSave === false) {
+			var ques = confirm("Exit without saving?");
+			if (ques === true) {
+				window.location.replace("plugins.html");
+			}
+		} else {
+			window.location.replace("plugins.html");
+		}
+	}
+	function enableTab(id) {
+		var el = document.getElementById(id);
+		el.onkeydown = function(e) {
+			if (e.keyCode === 9) {
+				var val = this.value,
+					start = this.selectionStart,
+					end = this.selectionEnd;
+				this.value = val.substring(0, start) + '\t' + val.substring(end);
+				this.selectionStart = this.selectionEnd = start + 1;
+				return false;
+			}
+		};
+	}
+	enableTab('codebox');
+</script>
+</html>

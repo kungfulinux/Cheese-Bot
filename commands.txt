@@ -1,0 +1,23 @@
+<required> (optional) //description
+Get more plugins at http://bot.minecheesecraft.com/extra-plugins.html
+You can send a Cheese Bot command through the console with ^ (^say Hello world!)
+You can send a normal command through the console with / (/tp Minecheesecraft)
+
+Navigation:
+/msg <bot> come //makes the bot navigate to sender.
+/msg <bot> goto <player> //Sends bot to specified player.
+/msg <bot> follow (player) //Makes the bot follow the specified player, or sender.
+
+Combat:
+/msg <bot> attack <player> //Makes the bot attack the specified player.
+/msg <bot> kill <player> //Makes the bot chase and repeatedly attack the player.
+
+Basic Commands
+/msg <bot> say <command/messsage> //Makes the bot send the specified command or message.
+/msg <bot> restart //Makes the bot quit and reconnect.
+/msg <bot> pos //Returns the bot's position.
+/msg <bot> tp //Fires /tp sender
+/msg <bot> tpa //Fires /tpa sender
+/msg <bot> health //Returns the bot's health.
+/msg <bot> hunger //Returns the bot's hunger.
+/msg <bot> time //Returns the server's time.

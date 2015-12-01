@@ -1,0 +1,268 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+body {
+	font-style: normal;
+    color: black;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	background-color: white;
+	background-attachment: fixed;
+	background-image: url("../images/consolebackground.png")
+}
+#container {
+    position: fixed;
+	bottom: 0;
+}
+input  {
+	font-style: normal;
+    color: black;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	width: 565px;
+    margin-left: 50px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	position: absolute;
+	bottom: 0;
+}
+input.getFile {
+	display: none;
+}
+h3 {
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+	font-size: 18px;
+	line-height: 10%;
+}
+h1 {
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: black;
+	font-size: 32px;
+	line-height: 100%;
+}
+p {
+	color: black;
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 14px;
+	margin-right: 50px;
+    margin-left: 50px;
+	margin-top: 5px;
+	line-height: 4px;
+	z-index: -3;
+}
+p.disabled {
+	color: #E53935;
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 18px;
+	margin-right: 50px;
+    margin-left: 50px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	line-height: 4px;
+	z-index: -3;
+}
+p.enabled {
+	color: #8BC34A;
+	font-style: normal;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 18px;
+	margin-right: 50px;
+    margin-left: 50px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	line-height: 4px;
+	z-index: -3;
+}
+button.disable {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #F44336;
+	padding: 5px 5px 5px 5px;
+	font-size: 12px;
+	text-decoration: none;
+	text-indent: 0;
+	z-index: -3;
+	margin-bottom: 5px;
+	margin-left: 50px;
+}
+button.disable:hover {
+	background: #EF5350;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+button.disable:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #E53935;
+}
+button.enable {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #8BC34A;
+	padding: 5px 5px 5px 5px;
+	font-size: 12px;
+	text-decoration: none;
+	text-indent: 0;
+	z-index: -3;
+	margin-bottom: 5px;
+	margin-left: 50px;
+}
+button.enable:hover {
+	background: #9CCC65;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+button.enable:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #7CB342;
+}
+button.open {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #FFC107;
+	padding: 5px 5px 5px 5px;
+	font-size: 12px;
+	text-decoration: none;
+	text-indent: 0;
+	z-index: -3;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+button.open:hover {
+	background: #FFCA28;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+button.open:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #FFB300;
+}
+button.del {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #9C27B0;
+	padding: 5px 5px 5px 5px;
+	font-size: 12px;
+	text-decoration: none;
+	text-indent: 0;
+	z-index: -3;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+button.del:hover {
+	background: #AB47BC;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+button.del:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #8E24AA;
+}
+h1.spacer {
+	visibility: hidden;
+	font-size: 80px;
+	line-height: 0px;
+	margin-top: 4px;
+	z-index: 1;
+}
+.buttonMaterial {
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 7px #666666;
+	-moz-box-shadow: 0px 0px 7px #666666;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.2s;
+	-webkit-transition:.2s;
+	box-shadow: 0px 0px 7px #666666;
+	outline: none;
+	font-family: "Roboto";
+	border: 0;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #2196F3;
+	padding: 10px 10px 10px 10px;
+	text-decoration: none;
+	text-indent: 0;
+	z-index: 2;
+	margin-bottom: 7px;
+}
+.buttonMaterial:hover {
+	background: #42A5F5;
+	box-shadow: 0px 0px 10px #666666;
+	text-decoration: none;
+}
+.buttonMaterial:active {
+	box-shadow: 0px 0px 5px #666666;
+	background: #1E88E5;
+}
+#bacBu {
+	margin-left: 300px;
+}
+#impBu back {
+	margin-left: 350px;
+}
+#newBu back {
+	margin-left: 400px;
+}
+#overlay {
+	pointer-events: none;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+}
