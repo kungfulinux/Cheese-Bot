@@ -9,3 +9,4 @@ package.json
 *.dat
 *.pak
 /node_modules
+/src/userdata/settings.txt
