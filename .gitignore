@@ -5,7 +5,6 @@
 *.o
 *.so
 *.db
-package.json
 *.dat
 *.pak
 node_modules
