@@ -1,0 +1,26 @@
+{
+  "name": "cheese-bot",
+  "description": "Minecraft tasks made simple.",
+  "version": "0.2.0",
+  "main": "index.html",
+  "window": {
+    "show": true,
+    "frame": true,
+    "toolbar": false,
+    "icon": "src/images/icon.png",
+    "width": 800,
+    "height": 550,
+	"resizable": false
+  },
+  "dependencies": {
+    "minecraft-protocol": "0.16.2",
+    "mineflayer": "1.5.1",
+    "mineflayer-scaffold": "0.0.5",
+    "mineflayer-blockfinder": "0.0.5",
+    "mineflayer-navigate": "0.0.9",
+	"minecraft-data": "0.16.1",
+    "path": "0.12.7",
+    "requireindex": "1.1.0",
+    "walk": "2.3.9"
+  }
+}
