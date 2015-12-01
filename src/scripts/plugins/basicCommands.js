@@ -4,7 +4,6 @@ function inject(bot) {
 
 ////No syntax
 bot.on('whisper', function(username, message) {
-  if(username === bot.username) return;
   switch(message) {
 	  
     case 'quit':

@@ -229,7 +229,7 @@ p.normal {
 	z-index: -1;
 }
 p.error {
-	color: red;
+	color: #E53935;
 	font-style: normal;
 	word-break: break-all;
 	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -242,20 +242,20 @@ p.error {
 	z-index: -1;
 }
 p.message {
-	color: lime;
+	color: green;
 	font-style: normal;
 	word-break: break-all;
-	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
-	font-size: 14px;
+	font-family: "Minecraftia";
+	font-size: 12px;
 	margin-right: 50px;
     margin-left: 50px;
 	margin-top: 0px;
-	margin-bottom: 10px;
-	line-height: 16px;
+	margin-bottom: 0px;
+	line-height: 24px;
 	z-index: -1;
 }
 p.info {
-	color: #0000cc;
+	color: #00ACC1;
 	font-style: normal;
 	word-break: break-all;
 	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
