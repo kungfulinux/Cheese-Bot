@@ -21,28 +21,27 @@ function inject(bot) {
 
 ////Commands
   bot.on('whisper', function(username, message) {
-    if(username === bot.username) return;
-      if (message.startsWith('goto ')) {
-        clearInterval(foloutId)
-        clearInterval(attoutId)
-        var l_m = message
-        var nav_player = l_m.substring(5)
-        var target = bot.players[nav_player.trim()].entity;
-        console.log("Navigating to " + target.position +".")
-        console.log("Calculating...")
-        bot.navigate.to(target.position);
-          console.log("On my way!")
-        }
-      if (message == "come") {
-        clearInterval(foloutId)
-        clearInterval(attoutId)
-        var target = bot.players[username].entity;
-        if (target != null) {
-        bot.navigate.to(target.position);
-        fakeConsole("Started navigating to " + username,"info")
-      } else {
-        fakeConsole("Could not find player.","error")
-      }
+    if (message.startsWith('goto ')) {
+      clearInterval(foloutId)
+      clearInterval(attoutId)
+      var l_m = message
+      var nav_player = l_m.substring(5)
+      var target = bot.players[nav_player.trim()].entity;
+      console.log("Navigating to " + target.position +".")
+      console.log("Calculating...")
+      bot.navigate.to(target.position);
+      console.log("On my way!")
+    }
+    if (message == "come") {
+      clearInterval(foloutId)
+      clearInterval(attoutId)
+      var target = bot.players[username].entity;
+      if (target != null) {
+      bot.navigate.to(target.position);
+      fakeConsole("Started navigating to " + username,"info")
+    } else {
+      fakeConsole("Could not find player.","error")
+    }
   }
   if (message == "follow" && follow === false) {
     follow = true
