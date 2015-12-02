@@ -44,28 +44,28 @@ bot.chatAddPattern(/^\[.*\] ?([^\]:]*) : (.*)$/, "chat", "pex chat");
 
 ////Fake console
 function fakeConsole(text,type) {
-	document = doc = window.document 
-	var text = arguments[0]
-	var type = arguments[1]
-	var para = document.createElement("P");
-	var t = document.createTextNode(text);
-	para.className = type;
-	para.appendChild(t);
-	document.getElementById('Space').appendChild(para);
-	window.scrollTo(0,document.body.scrollHeight);
+  document = doc = window.document 
+  var text = arguments[0]
+  var type = arguments[1]
+  var para = document.createElement("P");
+  var t = document.createTextNode(text);
+  para.className = type;
+  para.appendChild(t);
+  document.getElementById('Space').appendChild(para);
+  window.scrollTo(0,document.body.scrollHeight);
 	}
 
 ////Start Plugins
 var plugins = requireIndex('./src/scripts/plugins');
- for (plugin in plugins) {
-        if (plugins[plugin].inject != null) {
-			plugins[plugin].inject(bot);
-        } else {
-            console.log(plugin, 'has no inject function.');
-			fakeConsole(plugin + " has no inject function.","error")
-        }
+  for (plugin in plugins) {
+    if (plugins[plugin].inject != null) {
+      plugins[plugin].inject(bot);
+    } else {
+      console.log(plugin, 'has no inject function.');
+      fakeConsole(plugin + " has no inject function.","error")
     }
+}
 	
 window.onbeforeunload = function(event) {
-    bot.quit()
+  bot.quit()
 }
