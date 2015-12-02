@@ -51,7 +51,6 @@ function inject(bot) {
 
   ////Multiple syntax
   bot.on('whisper', function(username, message) {
-  if(username === bot.username) return;
     if (message.startsWith('say ')) {
       bot.chat(message.substring(4))
     }
