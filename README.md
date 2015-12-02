@@ -29,3 +29,7 @@ For advanced installation:
 6. Enter the command "npm install"
 
 7. Cheese Bot is now ready.
+
+# Roadmap
+
+Proper plugin editor. (Maybe using [Ace](https://ace.c9.io/#nav=about)?)
