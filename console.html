@@ -6,7 +6,7 @@
   <body>
   <img id="overlay" src="src/images/consoleOverlay.png">
   <div id="container">
-  <input type="text" class="matField" id="command" placeholder="Chat/Command" autocomplete="off">
+  <input type="text" class="matField" id="command" onkeypress="return runScript(event)" placeholder="Chat/Command" autocomplete="off">
   <button class="send" class="buttonMaterial" onclick="sendMessage()">Send</button>
   <button class="restart" class="buttonMaterial" onclick="restartBot()">Restart</button>
   <button class="goHome" class="buttonMaterial" onclick="gotoIndex()">Back</button>
@@ -35,6 +35,12 @@
 				fakeConsole("You sent: " + sendString,"info")
 				bot.chat(sendString)
 			}
+		}
+	}
+	
+	function runScript(e) {
+		if (e.keyCode == 13) {
+			sendMessage()
 		}
 	}
 	
