@@ -32,4 +32,4 @@ For advanced installation:
 
 # Roadmap
 
-Proper plugin editor. (Maybe using [Ace](https://ace.c9.io/#nav=about)?)
+Proper plugin editor. (Maybe using [Ace](https://ace.c9.io/#nav=about) or [CodeMirror](http://codemirror.net/)) 
