@@ -12,7 +12,8 @@ function saveToFile() {
     savestring = name_element + "|" + pass_element + "|" + ip_element + "|" + port_element + "|" + "0"
   }
 
-  fs.writeFile("./src/userdata/tempdat.txt", savestring, function(err) {
+  if (!window.name.startsWith("tempdat")) {window.name = "tempdat" + makeid() + ".txt"}
+  fs.writeFile("./src/userdata/" + window.name, savestring, function(err) {
     if(err) {
       return console.log(err);
       }
@@ -33,4 +34,14 @@ function saveToFile() {
         }
     });
   }
+}
+
+function makeid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
 }

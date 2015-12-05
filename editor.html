@@ -49,5 +49,12 @@
 		};
 	}
 	enableTab('codebox');
+	win.on('close', function () {
+		//win.hide()
+		if (fs.existsSync("./src/userdata/" + window.name)) {
+			fs.unlink("./src/userdata/" + window.name)
+		}
+		win.close(true);
+	});
 </script>
 </html>

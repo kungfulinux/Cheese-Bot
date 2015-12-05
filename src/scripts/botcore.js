@@ -11,7 +11,7 @@ var requireIndex = require('requireindex');
 var path = require('path')
 
 ////Loading data
-var loginDataTemp = fs.readFileSync("./src/userdata/tempdat.txt").toString();
+var loginDataTemp = fs.readFileSync("./src/userdata/" + window.name).toString();
 var loginData = loginDataTemp.split("|");
 if ( loginData[2] == "" ) { loginData[2] = "127.0.0.1" }
 if ( loginData[3] == "" ) { loginData[3] = "25565" }

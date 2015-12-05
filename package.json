@@ -2,6 +2,7 @@
   "name": "cheese-bot",
   "description": "Minecraft tasks made simple.",
   "version": "0.2.0",
+  "single-instance": false,
   "main": "index.html",
   "window": {
     "show": true,

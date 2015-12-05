@@ -116,6 +116,11 @@ function inject(bot) {
     clearInterval(attoutId)
     bot.navigate.stop();
   });
+  bot.on('entityGone', function(entity) {
+    if (entity === global.target) {
+      fakeConsole("Playerout of range." ,"error")
+    }
+  });
   ////Fake console
   function fakeConsole(text,type) {
     document = doc = window.document 

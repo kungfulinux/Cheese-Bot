@@ -10,8 +10,9 @@ if (loginData[4] == "1") {
   document.getElementById("save").checked = true
 }
 
-if (fs.existsSync("./src/userdata/tempdat.txt")) { 
-  loginDataTemp = fs.readFileSync("./src/userdata/tempdat.txt").toString();
+if (window.name.startsWith("tempdat")) {
+if (fs.existsSync("./src/userdata/" + window.name)) { 
+  loginDataTemp = fs.readFileSync("./src/userdata/" + window.name).toString();
   loginData = loginDataTemp.split("|");
   document.getElementById('username').value=loginData[0]
   document.getElementById('password').value=loginData[1]
@@ -22,4 +23,5 @@ if (fs.existsSync("./src/userdata/tempdat.txt")) {
   } else {
     document.getElementById("save").checked = true
   }
+}
 }
